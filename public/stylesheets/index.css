@@ -1,0 +1,133 @@
+h1 {
+    color: #555555;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    padding: 5px;
+}
+body {
+    background-color: #ecf5ff;
+}
+
+.top-bar {
+    background-color: #dfe7f0;
+    height: 20px;
+    margin-top: 20px;
+}
+a {
+    display: flex;
+    justify-content: space-around;
+}
+
+.questions-block {
+    width: 70rem;
+    display: flex;
+    border-radius: 4px;
+    margin-left: 2rem;
+    transition: background-color 600ms ease;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    margin-bottom: 1.5rem;
+}
+
+.questions-block__content {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,
+        rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    border-radius: 4px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.questions-block__user-info {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    /* padding: 30px 10px; */
+    margin-right: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.question-block__votes {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.questions-block__answers {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+.question-block__content__title {
+    font-weight: bold;
+    font-size: 16pt;
+    color: #0099ff;
+}
+
+.question-block__content__question {
+    font-size: 11pt;
+    color: #595959;
+}
+
+.questions-block__answers__count {
+    color: #f09d37;
+    font-size: 36px;
+}
+
+.up-arrow {
+    width: 30px;
+    height: 30px;
+}
+
+.question-block__votes__vote-count {
+    color: #0099ff;
+    font-size: 36px;
+}
+.voted .primaryp {
+    fill: #0099ff;
+}
+
+.down-arrow {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg);
+}
+
+a {
+    text-decoration: none;
+}
+
+.questions-block:hover {
+    background-color: #44d9e673;
+}
+.main {
+    padding-top: 6rem;
+    margin-left: 6rem;
+    padding-left: 1rem;
+    padding-bottom: 2rem;
+    /* padding: 1rem; */
+}
+
+.voted {
+    border-color: #0099ff transparent transparent #0099ff;
+}

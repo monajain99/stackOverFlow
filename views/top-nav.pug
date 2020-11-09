@@ -1,0 +1,25 @@
+append head
+  //- add page specific styles by appending to the head
+  link(rel="stylesheet" href="/stylesheets/top-nav.css")
+
+block content
+    nav.navbar-top
+        ul.navbar-nav-top
+            li.nav-item
+                a.logo-container(href="/")
+                    img.logo(src="/ternary-logo.png", alt="logo")
+            li.nav-item
+                .search-container
+                    form.search-form
+                        input.search-input(type="text" name="term" placeholder="Search for questions")
+            li.nav-item
+                .logout-login-container
+                    if authenticated
+                        //- button.logout-btn.dark-mode-btn Dark Mode
+                        form(action='/logout' method='post')
+                            button.logout-btn(type='submit') Logout
+
+
+
+                    else
+                        a.login(href="/login") Login

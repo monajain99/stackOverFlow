@@ -1,0 +1,26 @@
+extends layout.pug
+
+include utils.pug
+
+append head
+  script(src="/javascripts/demo.js" type="module" async defer)
+  link(rel="stylesheet" href="/stylesheets/new-answer.css")
+
+block content
+    include top-nav
+    include side-nav
+    div.main
+        div.form-container
+            h2.form-title Post A New Answer
+            //- h1.form-container__header Register
+            div.form-container__elements
+                +validationErrorSummary(errors)
+                .question-container
+                    h3.question-title=question.title
+                    p.question-content=question.content
+                form(action=`/questions/${question.id}/answers` method='post')
+                    input(required type='hidden' name='_csrf' value=csrfToken)
+                    textarea.form-elements__content__input(placeholder="Content" required name="content" maxlength=255)
+                    div.form-container-elements__actions-container
+                        button.form-container-elements__button(type='submit') Submit
+                        a.form-container-elements__cancel(href=`/questions/${question.id}`) Cancel

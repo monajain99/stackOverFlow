@@ -1,0 +1,25 @@
+extends layout.pug
+
+include utils.pug
+
+append head
+  //- add page specific styles by appending to the head
+  link(rel="stylesheet" href="/stylesheets/register.css")
+
+block content
+    div.form-container
+        img.logo(src="/ternary-logo.png", alt="logo")
+        //- h1.form-container__header Register
+        div.form-container__elements
+            +validationErrorSummary(errors)
+            form(action='/register' method='post')
+                input(type='hidden' name='_csrf' value=csrfToken)
+                +field('username', user.username, 'Username')
+                +field( 'email', user.email, 'Email Address')
+                +field( 'password', user.password, 'Password', 'password')
+                +field( 'confirmPassword', '', 'Confirm password', 'password')
+                div.form-container-elements__actions-container
+                    button.form-container-elements__button(type='submit') Register
+                    a.form-container-elements__cancel(href='/') Cancel
+            div
+                p: a(href="/login") Already have an account?
