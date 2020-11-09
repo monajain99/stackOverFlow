@@ -9,7 +9,7 @@ const stream = require('stream');
 const { csrfProtection, asyncHandler } = require("../utils");
 const db = require("../db/models");
 const cloudinary = require('cloudinary').v2;
-require('dotenv').config();
+// require('dotenv').config();
 
 const router = express.Router();
 
