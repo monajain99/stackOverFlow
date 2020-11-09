@@ -16,18 +16,14 @@ function partition(questions, left, right) {
         i = left, //left pointer
         j = right; //right pointer
     while (i <= j) {
-        console.log("????");
 
         while (questions[i].voteCount > pivot.voteCount) {
-            console.log("less");
             i++;
         }
         while (questions[j].voteCount < pivot.voteCount) {
-            console.log("more");
             j--;
         }
         if (i <= j) {
-            console.log("swapped");
             swap(questions, i, j); //sawpping two elements
             i++;
             j--;
@@ -183,10 +179,8 @@ router.get(
 
         questions = quickSort(questions, 0, questions.length - 1);
         for (let question of questions) {
-            console.log(question.voteCount);
         }
 
-        // console.log(questions);
         res.render("index", { questions, csrfToken: req.csrfToken() });
     })
 );

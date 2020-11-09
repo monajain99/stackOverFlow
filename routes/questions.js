@@ -33,7 +33,6 @@ function partition(questions, left, right) {
             j--;
         }
         if (i <= j) {
-            console.log("swapped");
             swap(questions, i, j); //sawpping two elements
             i++;
             j--;
@@ -102,7 +101,6 @@ const addAnswerAuthor = async (answers) => {
 
         const author = user.username;
         answer.author = author;
-        // console.log(answer);
     }
 };
 
@@ -316,14 +314,11 @@ router.post(
           next(err);
         }
       }
-        console.log('question' , question)
-        console.log('image:=   ', image)
       });
        
       var bufferStream = new stream.PassThrough();
       bufferStream.end(req.file.buffer);
       bufferStream.pipe(upload_stream);
-      console.log('uploadstream....', upload_stream)
       
      
     } else {
@@ -414,7 +409,6 @@ router.get(
             0,
             question.Answers.length - 1
         );
-        // console.log(question);
 
         res.render("question-detail", { question });
     })
@@ -446,7 +440,6 @@ router.get(
     asyncHandler(async (req, res) => {
         const questionId = parseInt(req.params.id, 10);
         const question = await db.Question.findByPk(questionId);
-        console.log(question);
         if (res.locals.authenticated) {
             res.render("edit-question", {
                 question,
@@ -511,7 +504,6 @@ router.post(
             questionId,
         });
 
-        // console.log(title);
         const validatorErrors = validationResult(req);
         try {
             if (validatorErrors.isEmpty()) {
