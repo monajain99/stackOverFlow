@@ -68,8 +68,10 @@ window.addEventListener("load", (event) => {
                         body: JSON.stringify(body),
                     }
                 );
+                // console.log(res)
 
                 if (!res.ok) throw res;
+                
                 let data = await res.json();
 
                 if (upArrow.classList.contains("voted")) {
@@ -98,6 +100,7 @@ window.addEventListener("load", (event) => {
                     console.error(parsedErr);
                 } else {
                     console.error(err.message);
+                    window.location.href="/login"
                 }
             }
         });
@@ -156,6 +159,8 @@ window.addEventListener("load", (event) => {
                     console.error(parsedErr);
                 } else {
                     console.error(err.message);
+                    window.location.href = "/login";
+
                 }
             }
         });
@@ -214,6 +219,7 @@ window.addEventListener("load", (event) => {
                     console.error(parsedErr);
                 } else {
                     console.error(err.message);
+                    window.location.href = "/login";
                 }
             }
         });
@@ -272,13 +278,14 @@ window.addEventListener("load", (event) => {
                     console.error(parsedErr);
                 } else {
                     console.error(err.message);
+                    window.location.href="/login"
                 }
             }
         });
     }
 
-    const darkModeBtn = document.querySelector(".dark-mode-btn");
-    darkModeBtn.addEventListener("click", (e) => {
-        document.documentElement.classList.toggle("dark-mode");
-    });
+    // const darkModeBtn = document.querySelector(".dark-mode-btn");
+    // darkModeBtn.addEventListener("click", (e) => {
+    //     document.documentElement.classList.toggle("dark-mode");
+    // });
 });

@@ -52,6 +52,7 @@ router.post(
     asyncHandler(async (req, res) => {
         if (!res.locals.authenticated) {
             res.redirect("/login");
+
         }
 
         const { isDownvote } = req.body;

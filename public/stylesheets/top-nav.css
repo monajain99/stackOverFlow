@@ -3,7 +3,7 @@
     width: 100vw;
     position: fixed;
     background-color: #dfe7f0;
-
+    z-index: 2;
     margin-bottom: 5rem;
     text-align: left;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px,

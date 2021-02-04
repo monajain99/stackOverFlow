@@ -113,3 +113,11 @@ ul li {
 p a {
     color: #0099ff;
 }
+
+
+.footer__container {
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    
+}
